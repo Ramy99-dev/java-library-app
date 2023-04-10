@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.EditAuthorController">
+   <children>
+      <Text layoutX="78.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname" />
+      <Text layoutX="78.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
+      <Text layoutX="79.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
+      <TextField fx:id="firstname" layoutX="246.0" layoutY="108.0" />
+      <TextField fx:id="lastname" layoutX="246.0" layoutY="144.0" />
+      <Text layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Author" />
+      <Button layoutX="182.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#editAuthor" prefHeight="24.0" prefWidth="55.0" text="Edit" />
+      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" text="Cancel" />
+      <DatePicker fx:id="birthday" layoutX="246.0" layoutY="180.0" prefHeight="24.0" prefWidth="171.0" />
+   </children>
+</AnchorPane>

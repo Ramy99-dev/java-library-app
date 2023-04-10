@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="1439.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AuthorController">
+   <children>
+      <TableView fx:id="authors" layoutX="147.0" layoutY="91.0" prefHeight="545.0" prefWidth="1266.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="firstnameCol" prefWidth="184.0" text="Firstname" />
+            <TableColumn fx:id="lastnameCol" prefWidth="149.0" text="Lastname" />
+         </columns>
+      </TableView>
+      <Button layoutX="1318.0" layoutY="40.0" mnemonicParsing="false" onMousePressed="#showAddAuthor" text="New Author" />
+      <Text layoutX="147.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Authors">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
