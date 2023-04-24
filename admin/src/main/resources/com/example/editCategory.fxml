@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.EditCategoryController">
+   <children>
+      <Text layoutX="78.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category Name" />
+      <Text layoutX="78.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+      <TextField fx:id="name" layoutX="246.0" layoutY="108.0" />
+      <Text layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Category" />
+      <Button layoutX="182.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#editCategory" prefHeight="24.0" prefWidth="55.0" text="Edit" />
+      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" text="Cancel" />
+      <TextArea fx:id="description" layoutX="246.0" layoutY="147.0" prefHeight="75.0" prefWidth="171.0" />
+   </children>
+</AnchorPane>

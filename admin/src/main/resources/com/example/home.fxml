@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1056.0" prefWidth="1925.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.HomeController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="1056.0" layoutX="-3.0" stroke="BLACK" strokeType="INSIDE" width="266.0" />
+      <AnchorPane fx:id="content" layoutX="266.0" layoutY="36.0" prefHeight="659.0" prefWidth="653.0" />
+      <Text layoutX="78.0" layoutY="330.0" onMouseClicked="#showDashboard" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Dashboard" />
+      <Text layoutX="78.0" layoutY="379.0" onMouseClicked="#showBooks" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Books" />
+      <Text layoutX="78.0" layoutY="428.0" onMouseClicked="#showCategories" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Categories" />
+      <Text layoutX="78.0" layoutY="475.0" onMouseClicked="#showAuthors" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Authors" />
+      <Text layoutX="77.0" layoutY="523.0" onMouseClicked="#showClients" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Clients" />
+      <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="46.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/Sample_User_Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="50.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/4492900-200.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="50.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/29302.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="27.0" layoutX="50.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/588a6507d06f6719692a2d15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="21.0" layoutX="51.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/writer-blogger-author-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="258.0" fitWidth="266.0" layoutX="1.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo-app.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="1849.0" layoutY="32.0" onMouseClicked="#logout" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+.menu-item{
+    -fx-color : red;  
+    -fx-font : 16px "Mukta", sans-serif;   
+}
+

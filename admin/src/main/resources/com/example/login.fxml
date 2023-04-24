@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.LoginController">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="974.0" layoutX="124.0" layoutY="-30.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/peakpx(1).png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="575.0" stroke="TRANSPARENT" strokeType="INSIDE" width="381.0" />
+      <TextField fx:id="username" layoutX="541.0" layoutY="201.0" prefHeight="32.0" prefWidth="222.0" />
+      <PasswordField fx:id="password" layoutX="541.0" layoutY="270.0" prefHeight="32.0" prefWidth="222.0" />
+      <Button layoutX="621.0" layoutY="343.0" mnemonicParsing="false" onAction="#signIn" styleClass="signInBtn" text="Sign In" />
+      <Text layoutX="541.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-label" text="Username" />
+      <Text layoutX="541.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-label" text="Password" />
+      <ImageView fitHeight="377.0" fitWidth="362.0" layoutX="10.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo-app.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
