@@ -14,7 +14,11 @@ The client has a web application where they can create an account, sign in, and 
 ## 2 . Architecture : 
    <img width="700px" src="assets/project-diagram.png"> <br/>
 
-## 3 . Try it: 
+## 3 . Class diagram :
+
+<img width="700px" src="assets/class diagram.png"> <br/>
+
+## 4 . Try it: 
  ### Prequesites
  - Java installed (JDK 8 +)
  - Postgres installed in your system .
