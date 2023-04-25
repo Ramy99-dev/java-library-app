@@ -5,10 +5,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.rmi.Naming;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 
+import com.example.DAO.ClientDao;
 import com.example.Models.Client;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,6 +40,26 @@ public class ClientController {
     @FXML
     public void initialize()
     {
+
+        ClientDao clientDao = new ClientDao();
+        ObservableList<Client> clientList = FXCollections.observableArrayList();
+      
+        ResultSet rs = clientDao.getClients();
+
+        try {
+            while (rs.next()) {
+ 
+                Client client = new Client((long)(rs.getInt("id")),rs.getString("firstname"),rs.getString("lastname"),rs.getString("firstname") + " " + rs.getString("lastname"),rs.getString("email"));
+                clientList.add(client);
+
+            }
+            clients.getItems().addAll(clientList);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         firstname.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lastname.setCellValueFactory(new PropertyValueFactory<>("lastname"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -59,6 +84,7 @@ public class ClientController {
 
                     System.out.println(receivedClient);
                     Client client = new Client();
+                    client.setId(Long.valueOf(receivedClient.get("id").toString()));
                     client.setFirstname(receivedClient.get("firstname").toString());
                     client.setLastname(receivedClient.get("lastname").toString());
                     client.setEmail(receivedClient.get("email").toString());

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import com.example.DAO.BookDao;
 import com.example.DAO.CategoryDao;
+import com.example.DAO.ClientDao;
 import com.example.Models.Client;
 
 import javafx.collections.FXCollections;
@@ -39,6 +40,9 @@ public class DashboardController {
 
         BookDao bookDao = new BookDao();
         numberBooks.setText(bookDao.getBooksNumber().toString()); 
+
+        ClientDao clientDao = new ClientDao();
+        numberClients.setText(clientDao.getClientNumber().toString());
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         

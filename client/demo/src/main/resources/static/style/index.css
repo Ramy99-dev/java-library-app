@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+body{
+    background: linear-gradient(-45deg, #101010, #1c1f26, #101010, #1c1f26);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Castoro Titling', cursive;
+}
+.card{
+    position:relative;
+    background-color:rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Castoro Titling', cursive;
+    color:white;
+    background: rgba(0, 0, 0, 0.2); 
+    backdrop-filter: blur(8px);
+    justify-content: center;
+}
+.books-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+}
+img{
+    width:auto;
+}

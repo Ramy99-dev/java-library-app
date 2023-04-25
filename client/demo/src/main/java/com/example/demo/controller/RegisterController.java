@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.demo.models.Client;
 import com.example.demo.service.IClientService;
@@ -41,7 +42,7 @@ public class RegisterController {
       client.setLastname(lastname);
       client.setPassword(password);
       client.setEmail(email);
-      clientService.addClient(client);
+      Client newClient = clientService.addClient(client);
 
       try {
         Socket socket = new Socket("localhost", 5000);
@@ -55,12 +56,13 @@ public class RegisterController {
 
         
         HashMap<String, Object> message = new HashMap<>();
-        HashMap<String, String> clientMap = new HashMap<>();
+        HashMap<String, Object> clientMap = new HashMap<>();
         message.put("content", "Hello from " + clientId);
         message.put("destClientId", "client2");
-        clientMap.put("firstname", client.getFirstname());
-        clientMap.put("lastname", client.getLastname());
-        clientMap.put("email",client.getEmail());
+        clientMap.put("id",newClient.getId());
+        clientMap.put("firstname", newClient.getFirstname());
+        clientMap.put("lastname", newClient.getLastname());
+        clientMap.put("email",newClient.getEmail());
         message.put("client",clientMap);
         output.writeObject(message);
         output.flush();
@@ -73,22 +75,7 @@ public class RegisterController {
         e.printStackTrace();
      }
 
-     /*  HashMap<String, String> clientMap = new HashMap<String, String>();
-		  clientMap.put("firstname",client.getFirstname() );
-		  clientMap.put("lastname", client.getLastname());
-		  clientMap.put("email", client.getEmail());
-		  ServerSocket serverSocket;
-		  try {
-        serverSocket = new ServerSocket(5000);
-        Socket clientSocket = serverSocket.accept(); 
-        ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream());
-        out.writeObject(clientMap);
-        out.flush();
-      } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
-      */
+     
       
 
       return "login";
@@ -103,13 +90,15 @@ public class RegisterController {
   }
 
   @PostMapping("/submit-login")
-  public String login(@RequestParam("email") String email, @RequestParam("password") String password  ) {
+  public Object login(@RequestParam("email") String email, @RequestParam("password") String password  ) {
     Client client = clientService.getClientByEmail(email);
     if(client != null)
     { 
         if(password.equals(client.getPassword()))
         {
-          return "index";
+          RedirectView redirectView = new RedirectView();
+          redirectView.setUrl("books");
+          return redirectView;
         }
     }
     
