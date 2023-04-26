@@ -38,10 +38,6 @@ import com.example.Models.Client;
 
     @Override
     public void start(Stage stage) throws IOException, InterruptedException, ClassNotFoundException {
-
-        
-
-        
         scene = new Scene(loadFXML("login"), 1000, 570);
         scene.getStylesheets().add("login.css");
         stage.setScene(scene);
@@ -61,12 +57,7 @@ import com.example.Models.Client;
     }
 
     public static void main(String[] args) {
-         
-
         launch();
-
-    
-       
     }
 
         

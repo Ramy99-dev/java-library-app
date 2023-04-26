@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.models.Book;
 import com.example.demo.service.IBookService;
@@ -17,9 +18,11 @@ public class BookController {
   private IBookService bookService;
 
   @RequestMapping("/books")
-  public String showRegister(Model model) {
+  public String showRegister(@RequestParam("name") String name , @RequestParam("idClient") Long id,Model model) {
      List<Book> books = bookService.getBooks();
+     System.out.println(books.get(0).toString());
      model.addAttribute("books", books);
+     model.addAttribute("name", name);
      System.out.println(books);
      return "index";
   }

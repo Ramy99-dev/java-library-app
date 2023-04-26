@@ -15,9 +15,6 @@ import com.example.demo.models.Client;
 
 
 @SpringBootApplication
-/*@EntityScan(basePackages = "java.com.example.demo.models")
-@EnableJpaRepositories(basePackages = "java.com.example.demo.repo")
-@ComponentScan(basePackageClasses=RegisterController.class)*/
 public class DemoApplication  { 
 	
 	public static void main(String[] args) {

@@ -46,5 +46,11 @@
          </image>
       </ImageView>
       <Text layoutX="1849.0" layoutY="32.0" onMouseClicked="#logout" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout" />
+      <Text layoutX="78.0" layoutY="572.0" onMouseClicked="#showReservations" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu-item" text="Reservations" />
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="51.0" layoutY="554.0" onMouseClicked="#showReservations" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/7229e4fc97c36e494c9cc45ff334bde7.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

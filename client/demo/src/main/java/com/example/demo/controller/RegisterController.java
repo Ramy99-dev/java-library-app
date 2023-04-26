@@ -97,7 +97,7 @@ public class RegisterController {
         if(password.equals(client.getPassword()))
         {
           RedirectView redirectView = new RedirectView();
-          redirectView.setUrl("books");
+          redirectView.setUrl("books?idClient="+client.getId()+"&name="+client.getFirstname());
           return redirectView;
         }
     }

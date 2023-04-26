@@ -100,6 +100,24 @@ public class HomeController {
     }
 
     @FXML
+    void showReservations(MouseEvent event) {
+        try 
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("reservation.fxml"));
+            Parent root = loader.load();
+            loader.getController();
+    
+            content.getChildren().clear();
+            content.getChildren().add(root);
+        } 
+        catch (IOException err) 
+        {
+            System.out.println(err.toString());
+        }
+
+    }
+
+    @FXML
     void showDashboard(MouseEvent event) {
         try 
         {
@@ -140,6 +158,8 @@ public class HomeController {
 
         
     }
+
+    
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
