@@ -21,8 +21,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.HashMap;
 
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
 
 import com.example.Models.Client;
 
@@ -34,8 +32,6 @@ import com.example.Models.Client;
  public class App extends Application {
 
     private static Scene scene;
-    private SocketClient socketClient;
-
     @Override
     public void start(Stage stage) throws IOException, InterruptedException, ClassNotFoundException {
         scene = new Scene(loadFXML("login"), 1000, 570);
@@ -44,7 +40,7 @@ import com.example.Models.Client;
         stage.getIcons().add(new Image(App.class.getResourceAsStream("/img/logo-app-bg.png")));
         stage.setResizable(false);
         stage.show();
-       
+    
     }
 
     static void setRoot(String fxml) throws IOException {

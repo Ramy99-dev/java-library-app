@@ -1,6 +1,8 @@
 package com.example.DAO;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -35,29 +37,11 @@ public class ReservationDao
     }
 
 
-    /*public void addCategory(Category category)
+    
+    public ResultSet getReservations()
     {
         try {
-            String sql = "INSERT INTO category (name,description) "
-            + "VALUES(?,?)";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, category.getCategoryName());
-            preparedStatement.setString(2, category.getCategoryName());
-
-            preparedStatement.executeUpdate();
-
-            System.out.println("Category Inserted successfully ...");
-
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
-    public ResultSet getCategories()
-    {
-        try {
-            String sql = "SELECT * FROM category";
+            String sql = "SELECT * FROM reservation";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             return  preparedStatement.executeQuery();
         } catch (SQLException e) {
@@ -66,35 +50,25 @@ public class ReservationDao
         }
     }
 
-    public void deleteCategory(long id)
-    {
-        
-        try {
-            String sql = "DELETE  FROM category WHERE id = ?";
-            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setLong(1, id);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-       
-    }
 
-    public void editCategory(Category category)
+    public Integer getReservationNumber()
     {
-    
-        
+        Integer number = 0;
         try {
-            String sql = "UPDATE  category SET name = ? , description = ? WHERE id = ?";
+            String sql = "SELECT COUNT(id) AS number FROM reservation;";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, category.getCategoryName());
-            preparedStatement.setString(2, category.getDescription());
-            preparedStatement.setLong(3, category.getIdCategory());
-            preparedStatement.executeUpdate();
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+ 
+                number = rs.getInt("number");
+
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+           
         }
-       
-    }*/
+        return number;
+    } 
+
     
 }
