@@ -15,6 +15,8 @@ import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +26,7 @@ import com.example.demo.models.Client;
 import com.example.demo.service.IClientService;
 
 @Controller
-public class RegisterController {
+public class AuthController {
   @Autowired
   private IClientService clientService;
 
@@ -34,8 +36,15 @@ public class RegisterController {
   }
 
   @PostMapping("/submit-register")
-  public String register(@RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname ,  @RequestParam("password") String password , @RequestParam("email") String email) throws InterruptedException {
-    if(clientService.getClientByEmail(email) == null)
+  public String register(@RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname ,  @RequestParam("password") String password , @RequestParam("confirm_password") String confirmPassword , @RequestParam("email") String email ,Model model) throws InterruptedException {
+    if(!confirmPassword.equals(password))
+    {
+      model.addAttribute("errMsg", "Password doesn't match");
+      return "register";
+    }
+    else
+    {
+      if(clientService.getClientByEmail(email) == null)
     {
       Client client = new Client();
       client.setFirstname(firstname);
@@ -54,7 +63,6 @@ public class RegisterController {
         output.flush();
         System.out.println("Registered as " + clientId);
 
-        
         HashMap<String, Object> message = new HashMap<>();
         HashMap<String, Object> clientMap = new HashMap<>();
         message.put("content", "Hello from " + clientId);
@@ -66,21 +74,15 @@ public class RegisterController {
         message.put("client",clientMap);
         output.writeObject(message);
         output.flush();
-          
-        
-        
-      
       } catch (IOException e) {
         System.err.println("Failed to connect to socket server ");
         e.printStackTrace();
      }
-
-     
-      
-
       return "login";
     }
+    model.addAttribute("errMsg", "User already exist");
     return "register";
+    }
     
   }
 
@@ -90,18 +92,24 @@ public class RegisterController {
   }
 
   @PostMapping("/submit-login")
-  public Object login(@RequestParam("email") String email, @RequestParam("password") String password  ) {
+  public Object login(@RequestParam("email") String email, @RequestParam("password") String password , Model model ) {
     Client client = clientService.getClientByEmail(email);
     if(client != null)
     { 
         if(password.equals(client.getPassword()))
         {
           RedirectView redirectView = new RedirectView();
-          redirectView.setUrl("books?idClient="+client.getId()+"&name="+client.getFirstname());
+          redirectView.setUrl("auth?idClient="+client.getId()+"&firstname="+client.getFirstname());
           return redirectView;
         }
     }
-    
+    model.addAttribute("errMsg", "Invalid credentials");
     return "login";
+  }
+
+  @GetMapping("/auth")
+  public String auth(@RequestParam("idClient") Long idClient, @RequestParam("firstname") String firstname )
+  {
+   return "auth";
   }
 }

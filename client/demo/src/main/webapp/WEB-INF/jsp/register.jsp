@@ -10,7 +10,8 @@
 <body>
    <div class="register-box">
     <form method="post" action="/submit-register">
-        <center><h1>Register</h1></center>
+        <center><h1>Register</h1>
+        <span class="error">${errMsg}</span></center>
         <label>Firstname :</label>
         <input type="text" name="firstname" id="" placeholder="Enter your firstname">
         <label>Lastname :</label>

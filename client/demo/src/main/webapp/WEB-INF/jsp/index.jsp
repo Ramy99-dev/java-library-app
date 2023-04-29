@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/index.css">
-
+    <script src="checkAuth.js"></script>
 </head>
 <body>
-   <center><h1>Hello ${name}</h1></center>
+    <a class="logout" onclick="logout()">Logout</a>
+   <center><h1>Hello ${name}</h1></center><br>
    <div class="books-container">
  
     <c:forEach items="${books}" var="book">
@@ -24,6 +25,10 @@
         </div>
     </c:forEach>
     <script>
+       isLoggedIn = localStorage.getItem("loggedIn");
+       if(isLoggedIn == null) {
+            window.location.href = "/login" 
+        } 
 
         body = document.getElementsByTagName('body')[0];
 
@@ -53,6 +58,11 @@
             console.log(idClient);
 
             window.location.href = "/submit-reservation/?idClient="+idClient+"&idBook="+idBook+"&date="+startDate.value+"&name="+name;
+        }
+
+        const logout = () =>{
+            localStorage.removeItem("loggedIn")
+            window.location.href = "/login" 
         }
 
     </script>

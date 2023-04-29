@@ -10,7 +10,8 @@
 <body>
    <div class="register-box">
     <form method="post" action="/submit-login">
-        <center><h1>Login</h1></center>
+        <center><h1>Login</h1>
+        <span class="error">${errMsg}</span></center>
         <label>Email :</label>
         <input type="email" name="email" id="" placeholder="Enter your email">
         <label>Password :</label>

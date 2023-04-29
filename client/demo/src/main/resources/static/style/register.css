@@ -41,3 +41,6 @@ input[type=submit]{
     border:none;
     font-weight: bold;
 }
+.error {
+    color:red;
+}
