@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 import com.example.DAO.AuthorDao;
 import com.example.DAO.BookDao;
@@ -21,16 +20,17 @@ import com.example.Models.Category;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class AddBookController {
 
-    private static final String RESOURCES_FOLDER = "resources";
 
     @FXML
     private ComboBox<Author> authorField;
@@ -145,6 +145,12 @@ public class AddBookController {
         }
         return imgName;
 
+    }
+
+    @FXML
+    void cancel(MouseEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     

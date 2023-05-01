@@ -15,7 +15,7 @@
             <TableColumn fx:id="nameCol" prefWidth="541.0" text="Category Name" />
          </columns>
       </TableView>
-      <Button layoutX="1271.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#showAddCategory" text="New Category" />
+      <Button layoutX="1271.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#showAddCategory" prefHeight="34.0" prefWidth="110.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Add Category" />
       <Text layoutX="158.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categories">
          <font>
             <Font name="System Bold" size="24.0" />

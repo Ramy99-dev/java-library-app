@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap');
+
+.dashboard-title {
+    -fx-font: 'Barlow Condensed', sans-serif;
+}

@@ -12,8 +12,8 @@
       <Text layoutX="78.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
       <TextField fx:id="name" layoutX="246.0" layoutY="108.0" />
       <Text layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Category" />
-      <Button layoutX="182.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#editCategory" prefHeight="24.0" prefWidth="55.0" text="Edit" />
-      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" text="Cancel" />
+      <Button layoutX="174.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#editCategory" prefHeight="32.0" prefWidth="63.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Edit" />
+      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Cancel" />
       <TextArea fx:id="description" layoutX="246.0" layoutY="147.0" prefHeight="75.0" prefWidth="171.0" />
    </children>
 </AnchorPane>

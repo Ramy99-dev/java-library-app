@@ -44,5 +44,11 @@ public class EditAuthorController {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+
+    @FXML
+    void cancel(MouseEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
     
 }

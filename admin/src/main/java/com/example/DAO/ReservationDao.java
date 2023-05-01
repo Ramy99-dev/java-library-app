@@ -41,7 +41,9 @@ public class ReservationDao
     public ResultSet getReservations()
     {
         try {
-            String sql = "SELECT * FROM reservation";
+            String sql = "SELECT r.id ,c.firstname as firstname , c.lastname as lastname , r.idBook ,start_date , end_date FROM reservation r "+
+            "INNER JOIN  client c ON r.idClient = c.id "+
+            "INNER JOIN  books b  ON r.idBook = b.id ;";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             return  preparedStatement.executeQuery();
         } catch (SQLException e) {

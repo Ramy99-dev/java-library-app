@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
@@ -10,12 +9,10 @@
    <children>
       <Text layoutX="78.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname" />
       <Text layoutX="78.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
-      <Text layoutX="79.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday" />
       <TextField fx:id="firstname" layoutX="246.0" layoutY="108.0" />
       <TextField fx:id="lastname" layoutX="246.0" layoutY="144.0" />
       <Text layoutX="216.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Author" />
-      <Button layoutX="182.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#addAuthor" prefHeight="24.0" prefWidth="55.0" text="Add" />
-      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" text="Cancel" />
-      <DatePicker fx:id="birthday" layoutX="246.0" layoutY="180.0" prefHeight="24.0" prefWidth="171.0" />
+      <Button layoutX="174.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#addAuthor" prefHeight="35.0" prefWidth="63.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Add" />
+      <Button layoutX="254.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: red; -fx-text-fill: white;" text="Cancel" />
    </children>
 </AnchorPane>

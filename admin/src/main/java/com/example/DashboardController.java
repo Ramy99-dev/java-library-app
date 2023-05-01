@@ -1,16 +1,13 @@
 package com.example;
 
-import java.rmi.Naming;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import com.example.DAO.BookDao;
-import com.example.DAO.CategoryDao;
 import com.example.DAO.ClientDao;
 import com.example.DAO.ReservationDao;
-import com.example.Models.Client;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

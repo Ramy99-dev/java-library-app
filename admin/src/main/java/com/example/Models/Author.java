@@ -1,6 +1,5 @@
 package com.example.Models;
 
-import java.util.List;
 
 public class Author {
     
@@ -31,6 +30,7 @@ public class Author {
     public Long getIdAuthor() {
         return this.idAuthor;
     }
+   
 
     public void setIdAuthor(Long idAuthor) {
         this.idAuthor = idAuthor;

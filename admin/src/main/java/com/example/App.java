@@ -1,29 +1,12 @@
 package com.example;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.UnknownHostException;
-import java.rmi.Naming;
-
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.util.HashMap;
-
-
-import com.example.Models.Client;
-
 
 /**
  * JavaFX App
@@ -39,6 +22,7 @@ import com.example.Models.Client;
         stage.setScene(scene);
         stage.getIcons().add(new Image(App.class.getResourceAsStream("/img/logo-app-bg.png")));
         stage.setResizable(false);
+        stage.setTitle("Book Explorer");
         stage.show();
     
     }

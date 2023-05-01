@@ -27,5 +27,6 @@
             <Image url="@../../img/logo-app.png" />
          </image>
       </ImageView>
+      <Text fx:id="errMsg" layoutX="587.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
    </children>
 </AnchorPane>

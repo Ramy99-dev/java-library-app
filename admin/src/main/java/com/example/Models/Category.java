@@ -1,6 +1,5 @@
 package com.example.Models;
 
-import java.util.List;
 
 public class Category {
 

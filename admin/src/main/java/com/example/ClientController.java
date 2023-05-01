@@ -4,14 +4,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.rmi.Naming;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import org.controlsfx.control.Notifications;
+
 import com.example.DAO.ClientDao;
 import com.example.Models.Client;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -80,7 +82,7 @@ public class ClientController {
                     System.out.println("Registered as " + clientId);
         
                     ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
-                    HashMap receivedClient = (HashMap) input.readObject();
+                    HashMap<Object,Object> receivedClient = (HashMap) input.readObject();
 
                     System.out.println(receivedClient);
                     Client client = new Client();
@@ -89,10 +91,14 @@ public class ClientController {
                     client.setLastname(receivedClient.get("lastname").toString());
                     client.setEmail(receivedClient.get("email").toString());
 
-                    clients.getItems().add(client);            
-            
+                    clients.getItems().add(client);   
                     
-            
+                    Platform.runLater(() -> {
+                        Notifications.create()
+                            .title("Client")
+                            .text("A new client registered")
+                            .showInformation();
+                    });
         
                 } catch (IOException e) {
                     System.err.println("Failed to connect to server");

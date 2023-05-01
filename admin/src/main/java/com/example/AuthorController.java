@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.example.App;
 import com.example.DAO.AuthorDao;
 import com.example.Models.Author;
 
@@ -13,16 +12,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -71,6 +67,7 @@ public class AuthorController {
         });
 
         ContextMenu menu = new ContextMenu();
+        menu.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
         menu.getItems().add(mi2);
         menu.getItems().add(mi1);
       

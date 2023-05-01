@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
 .login-label{
-    -fx-color : red;  
     -fx-font : 16px "Mukta", sans-serif;   
 }
 .signInBtn{
-    -fx-background-color : white;  
+    -fx-background-color : green;
+    -fx-text-fill:white;  
     -fx-font-weight: bold;
 
 }

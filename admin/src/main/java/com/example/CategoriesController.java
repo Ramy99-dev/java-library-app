@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.example.App;
 import com.example.DAO.CategoryDao;
 import com.example.Models.Category;
 
@@ -63,6 +62,7 @@ public class CategoriesController {
         });
 
         ContextMenu menu = new ContextMenu();
+        menu.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
         menu.getItems().add(mi2);
         menu.getItems().add(mi1);
       

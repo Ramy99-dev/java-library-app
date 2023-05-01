@@ -17,12 +17,12 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <Text layoutX="296.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clients" wrappingWidth="118.6640625">
+      <Text layoutX="296.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="dashboard-title" text="Clients" wrappingWidth="118.6640625">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="754.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Books" wrappingWidth="104.6640625">
+      <Text layoutX="754.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="dashboard-title" text="Books" wrappingWidth="104.6640625">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
@@ -32,7 +32,7 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <Text layoutX="1143.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation" wrappingWidth="221.6640625">
+      <Text layoutX="1143.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="dashboard-title" text="Reservation" wrappingWidth="221.6640625">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>

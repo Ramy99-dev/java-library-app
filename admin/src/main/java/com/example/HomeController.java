@@ -1,25 +1,16 @@
 package com.example;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-import com.example.App;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXMLLoader;  
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
+
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class HomeController {
@@ -29,12 +20,21 @@ public class HomeController {
     @FXML
     private AnchorPane content;
 
+    
+    @FXML
+    public void initialize()
+    {
+        showDashboard(null);
+    }
+        
+
     @FXML
     void showAuthors(MouseEvent event) {
         try 
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("authors.fxml"));
             Parent root = loader.load();
+            
             loader.getController();
 
     
@@ -151,6 +151,8 @@ public class HomeController {
             scene.getStylesheets().add("login.css");
             stage.setScene(scene);
             stage.setResizable(false);
+            stage.getIcons().add(new Image(App.class.getResourceAsStream("/img/logo-app-bg.png")));
+            stage.setTitle("Book Explorer");
             stage.show();
             
         } catch (IOException e) {

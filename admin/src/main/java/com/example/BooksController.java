@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.example.App;
 import com.example.DAO.BookDao;
 import com.example.Models.Book;
 
@@ -58,8 +57,8 @@ public class BooksController {
 
         MenuItem mi1 = new MenuItem("Edit");
             mi1.setOnAction((ActionEvent event) -> {
-                Book author = books.getSelectionModel().getSelectedItem();
-                //showEditAuthor(author);
+                //Book book = books.getSelectionModel().getSelectedItem();
+                //showEditBook(book);
         });
         
         MenuItem mi2 = new MenuItem("Delete");
@@ -76,6 +75,7 @@ public class BooksController {
         });
 
         ContextMenu menu = new ContextMenu();
+        menu.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
         menu.getItems().add(mi2);
         menu.getItems().add(mi1);
       
@@ -140,7 +140,7 @@ public class BooksController {
         Stage stage = new Stage();
         Scene scene;
         try {
-            scene = new Scene(loadFXML("addBook"), 550,300);
+            scene = new Scene(loadFXML("addBook"), 550,320);
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
@@ -148,10 +148,54 @@ public class BooksController {
             e.printStackTrace();
         }
 
-        /*stage.setOnHiding(e -> {
-            updateAuthorsList();
-        });*/
+        stage.setOnHiding(e -> {
+            updateBooksList();
+        });
     }
+
+    /*void showEditBook(Book book) {
+        Stage stage = new Stage();
+        Scene scene;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("editBook.fxml"));
+            scene = new Scene(loader.load(), 550,300);
+            EditBookController controller = loader.getController();
+            controller.initData(book);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        stage.setOnHiding(e -> {
+            updateAuthorsList();
+        });
+    }*/
+
+    private void updateBooksList()
+    {
+            ObservableList<Book> booksList = FXCollections.observableArrayList();
+            BookDao bookDao = new BookDao();
+            ResultSet rs = bookDao.getBooks();
+    
+            try {
+                while (rs.next()) {
+     
+                    Book book = new Book((long)(rs.getInt("id")),rs.getString("title"),rs.getString("cover"),rs.getString("firstname") + " " + rs.getString("lastname"),rs.getString("name"),rs.getInt("quantity"));
+                    booksList.add(book);
+    
+                }
+                books.getItems().clear();
+                books.getItems().addAll(booksList);
+            } catch (SQLException exc) {
+                // TODO Auto-generated catch block
+                exc.printStackTrace();
+            }
+            books.refresh();
+    }
+    
+    
 
 
     private static Parent loadFXML(String fxml) throws IOException {

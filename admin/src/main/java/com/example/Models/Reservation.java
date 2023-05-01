@@ -9,6 +9,8 @@ public class Reservation {
     private Long idBook;
     private Date startDate;
     private Date endDate;
+    private String clientFullName;
+  
 
 
     public Reservation() {
@@ -18,6 +20,14 @@ public class Reservation {
     public Reservation(Long idReservation, Long idClient, Long idBook, Date startDate, Date endDate) {
         this.idReservation = idReservation;
         this.idClient = idClient;
+        this.idBook = idBook;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public Reservation(Long idReservation, String fullname ,  Long idBook, Date startDate, Date endDate) {
+        this.idReservation = idReservation;
+        this.clientFullName = fullname;
         this.idBook = idBook;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -65,5 +75,19 @@ public class Reservation {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+
+
+    public String getClientFullName() {
+        return this.clientFullName;
+    }
+
+    public void setClientFullName(String clientFullName) {
+        this.clientFullName = clientFullName;
+    }
+    
+
+   
+
 
 }

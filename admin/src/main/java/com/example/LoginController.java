@@ -2,7 +2,6 @@ package com.example;
 
 import java.io.IOException;
 
-import com.example.App;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -26,6 +26,9 @@ public class LoginController {
 
     @FXML
     private TextField username;
+
+    @FXML
+    private Text errMsg;
 
     @FXML
     void signIn(ActionEvent event) {
@@ -48,6 +51,9 @@ public class LoginController {
             }
           
 
+        }
+        else{
+            errMsg.setText("Invalid Credentials");
         }
     }
 

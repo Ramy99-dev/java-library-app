@@ -18,7 +18,7 @@
             <TableColumn fx:id="qteCol" prefWidth="171.0" text="Quantity" />
         </columns>
       </TableView>
-      <Button layoutX="1279.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#showAddBook" text="New book" />
+      <Button layoutX="1279.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#showAddBook" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Add Book" />
       <Text layoutX="160.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Books">
          <font>
             <Font name="System Bold" size="24.0" />

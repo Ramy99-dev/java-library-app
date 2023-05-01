@@ -1,23 +1,19 @@
 package com.example;
 
-import java.io.IOException;
+
 
 import com.example.DAO.AuthorDao;
 import com.example.Models.Author;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class AddAuthorController {
     
-    @FXML
-    private DatePicker birthday;
+  
 
     @FXML
     private TextField firstname;
@@ -34,5 +30,12 @@ public class AddAuthorController {
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             stage.close();
    
+    }
+
+
+    @FXML
+    void cancel(MouseEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }
