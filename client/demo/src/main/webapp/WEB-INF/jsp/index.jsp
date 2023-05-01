@@ -13,7 +13,7 @@
     <a class="logout" onclick="logout()">Logout</a>
    <center><h1>Hello ${name}</h1></center><br>
    <div class="books-container">
- 
+    
     <c:forEach items="${books}" var="book">
         <div class="card">
             <img src="book-cover.png" alt="">
@@ -21,9 +21,16 @@
             <hr>
             <h2>${book.title}</h2>
             
-           <a href="#popup1"> <button  class="button" onclick="openPopUp('${book.getIdBook()}')">Reserve</button></a>
+            <a href="#popup1"> <button  class="button" onclick="openPopUp('${book.getIdBook()}')">Reserve</button></a>
         </div>
     </c:forEach>
+  
+    
+
+       
+        
+    
+    
     <script>
        isLoggedIn = localStorage.getItem("loggedIn");
        if(isLoggedIn == null) {

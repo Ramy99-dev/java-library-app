@@ -8,6 +8,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import com.example.DAO.AuthorDao;
+import com.example.DAO.ClientDao;
+import com.example.DAO.ReservationDao;
+
 /**
  * JavaFX App
  */
@@ -17,6 +21,9 @@ import java.io.IOException;
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException, InterruptedException, ClassNotFoundException {
+        AuthorDao authorDao = new AuthorDao();
+        ClientDao clientDao = new ClientDao();
+        ReservationDao reservationDao = new ReservationDao();
         scene = new Scene(loadFXML("login"), 1000, 570);
         scene.getStylesheets().add("login.css");
         stage.setScene(scene);

@@ -25,8 +25,8 @@ public class ReservationDao
                         "start_date DATE, " +
                         "end_date DATE, " +
                         "PRIMARY KEY ( id ),"+
-                        "CONSTRAINT fk_client FOREIGN KEY(idClient) REFERENCES client(id),"+
-                        "CONSTRAINT fk_book FOREIGN KEY(idBook) REFERENCES books(id));"; 
+                        "CONSTRAINT fk_client FOREIGN KEY(idClient) REFERENCES client(id) ON DELETE CASCADE ,"+
+                        "CONSTRAINT fk_book FOREIGN KEY(idBook) REFERENCES books(id) ON DELETE CASCADE )  ;"; 
             stmt.executeUpdate(sql);
             System.out.println("Created table in given database...");   	  
         } 

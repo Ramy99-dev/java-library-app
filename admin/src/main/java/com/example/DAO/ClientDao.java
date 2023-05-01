@@ -22,8 +22,8 @@ public class ClientDao {
                     "(id SERIAL not NULL, " +
                     " firstname VARCHAR(255), " + 
                     " lastname VARCHAR(255), " + 
-                    " email DATE, " + 
-                    " password String, " +
+                    " email VARCHAR(255), " + 
+                    " password VARCHAR(255), " +
                     " PRIMARY KEY ( id ))"; 
             stmt.executeUpdate(sql);
             System.out.println("Created table in given database...");   	  

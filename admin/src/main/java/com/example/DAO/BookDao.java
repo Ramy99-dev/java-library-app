@@ -27,8 +27,8 @@ public class BookDao {
                     " categoryId INT," + 
                     " quantity INT ," + 
                     " PRIMARY KEY ( id ),"+
-                    " CONSTRAINT fk_author FOREIGN KEY(authorId) REFERENCES authors(id),"+
-                    " CONSTRAINT fk_category FOREIGN KEY(categoryId) REFERENCES category(id)"+
+                    " CONSTRAINT fk_author FOREIGN KEY(authorId) REFERENCES authors(id) ON DELETE CASCADE ,"+
+                    " CONSTRAINT fk_category FOREIGN KEY(categoryId) REFERENCES category(id) ON DELETE CASCADE"+
                     ");";
 
 
@@ -141,6 +141,60 @@ public class BookDao {
         }
         
     } 
+
+    public void decrementQuantity(Long idBook)
+    {
+        int quantity = 0;
+        try {
+            String sql = "SELECT quantity "+
+            "FROM books b "+
+            "WHERE b.id = ? ;";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setLong(1, idBook);
+
+            ResultSet rs  =  preparedStatement.executeQuery();
+            while (rs.next()) {
+ 
+                 quantity = rs.getInt("quantity");
+
+            }
+
+            if(quantity > 0)
+            {
+                sql = "UPDATE  books SET quantity = quantity - 1  WHERE id = ?";
+                preparedStatement = conn.prepareStatement(sql);
+                preparedStatement.setLong(1, idBook);
+                preparedStatement.executeUpdate();
+            }
+            else
+            {
+                deleteBook(idBook);
+            }
+            
+
+           
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void deleteBook(long idBook)
+    {
+        
+        try {
+            String sql = "DELETE FROM books WHERE id = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setLong(1, idBook);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       
+    }
+
+
+    
 
     
     

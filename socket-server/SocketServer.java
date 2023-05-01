@@ -29,7 +29,6 @@ public class SocketServer {
                                 HashMap<String, String> message = (HashMap<String, String>) input.readObject();
                                 System.out.println("Received message from " + clientId + ": " + message.get("content"));
         
-                                // Forward message to destination client
                                 String destClientId = message.get("destClientId");
                                 Socket destSocket = clients.get(destClientId);
                                 if (destSocket != null) {

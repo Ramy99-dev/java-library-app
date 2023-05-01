@@ -18,5 +18,20 @@ public class BookServiceImpl implements IBookService{
     public List<Book> getBooks() {
          return bookRepo.findAll();
     }
+
+    @Override
+    public Book getBook(Long idBook) {
+        return bookRepo.findById(idBook).get();
+    }
+
+    @Override
+    public void decrementQuantityNumber(Long idBook) {
+        bookRepo.decrementQuantity(idBook);
+    }
+
+    @Override
+    public void deleteBook(Long idBook) {
+       bookRepo.deleteById(idBook);
+    }
     
 }

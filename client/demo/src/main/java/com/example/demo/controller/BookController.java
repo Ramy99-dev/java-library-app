@@ -20,7 +20,6 @@ public class BookController {
   @RequestMapping("/books")
   public String showRegister(@RequestParam("name") String name , @RequestParam("idClient") Long id,Model model) {
      List<Book> books = bookService.getBooks();
-     System.out.println(books.get(0).toString());
      model.addAttribute("books", books);
      model.addAttribute("name", name);
      System.out.println(books);
