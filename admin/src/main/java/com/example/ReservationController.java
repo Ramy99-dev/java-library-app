@@ -87,8 +87,8 @@ public class ReservationController {
     @FXML
     void print(MouseEvent event) throws Exception {
 
-          File compte = new File("/home/rami/Desktop/projects/JavaFX/demo/admin/reservations/reservation.pdf");
-          FileOutputStream fos = new FileOutputStream(compte);
+          File reservationsPDF = new File("/home/rami/Desktop/projects/JavaFX/demo/admin/reservations/reservation.pdf");
+          FileOutputStream fos = new FileOutputStream(reservationsPDF);
           PDF pdf = new PDF(fos);
           Page page = new Page(pdf,A4.PORTRAIT);
           
@@ -156,7 +156,7 @@ public class ReservationController {
           pdf.flush();
           fos.close();
           try {
-            String[] command = {"xdg-open", compte.getAbsolutePath()};
+            String[] command = {"xdg-open", reservationsPDF.getAbsolutePath()};
             ProcessBuilder pb = new ProcessBuilder(command);
             pb.start();
         } catch (IOException e) {
